@@ -6,8 +6,8 @@
 ## Pages:
 
 - Home
-- Join
-- Login
+- Join [√]
+- Login [√]
 - Search [√]
 - User Detail
 - Edit Profile
