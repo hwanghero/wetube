@@ -5,9 +5,9 @@ block content
     .search__header
         h3 Searching for #{searchingBy}
     .search__video
-        each video in fake_videos
+        each video in videos
             +videoBlock({
                 title:video.title,
                 views:video.views,
-                videoFile:video.videoFile
+                videoFile:video.fildUrl
             })
