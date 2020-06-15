@@ -45,9 +45,7 @@ export const videoDetail = async (req, res) => {
         console.log(video);
 
         res.render("videoDetail", { pageTitle: "Video Detail" });
-    } catch (error) {
-
-    }
+    } catch (error) {}
 };
 
 export const editVideo = (req, res) => res.render("editVideo", { pageTitle: "Edit Viedo" });
