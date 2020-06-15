@@ -52,10 +52,6 @@ export const videoDetail = async (req, res) => {
         const video = await Video.findById(id);
         console.log(video);
 
-<<<<<<< HEAD
-        res.render("videoDetail", { pageTitle: "Video Detail" });
-    } catch (error) {}
-=======
         // 컨트롤러에서 video값을 넘겨줘서 가능
         res.render("videoDetail", { pageTitle: video.title, video });
     } catch (error) {
@@ -89,7 +85,6 @@ export const postEditVideo = async (req, res) => {
         console.log(error);
         res.redirect(routes.home);
     }
->>>>>>> 429fd8d781c8395c3c03bc24975830d331f77ead
 };
 
 export const deleteVideo = async (req, res) => {
