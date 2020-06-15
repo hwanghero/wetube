@@ -12,7 +12,14 @@ const config = {
         rules: [
             {
                 test: /\.(scss)$/,
-                use
+                use: ExtractCSS.extract([
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: "sass-loader"
+                    }
+                ])
             }
         ]
     },
