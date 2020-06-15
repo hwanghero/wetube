@@ -29,7 +29,12 @@
     "build:assets": "WEBPACK_ENV=production webpack"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "cross-env": "^7.0.2",
+=======
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+>>>>>>> 429fd8d781c8395c3c03bc24975830d331f77ead
     "nodemon": "^2.0.4"
   }
 }
