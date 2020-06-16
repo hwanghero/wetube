@@ -1,0 +1,74 @@
+.header {
+    background-color: $red;
+    margin-bottom: 50px;
+    // scss의 특징
+    // - div.class로 안하고
+    //   div{ class { } } 이런식으로 코딩 느낌나게 한다.
+    .header__wrapper{
+        padding: 5px 0px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: grid;
+        // grid-template-columns: 명시적 열(Track)의 크기를 정의
+        // fr(fraction, 공간 비율) 단위를 사용할 수 있습니다.
+        // - 3개에 1fr ㅣ ㅣ ㅣ 1fr비율로 사용
+        // repeat() 함수를 사용할 수 있습니다.
+        grid-template-columns: repeat(3, 1fr);
+        // align-items: 속성을 이용한 수직 정렬
+        align-items: center;
+        .header__column{
+            i {
+                color: white;
+                font-size: 40px;
+            }
+            // scss에서는 &:...가 div:nth-child랑 같은개념
+            // 그러기에 매우 깔끔한 로직이 완성이 됨
+            &:nth-child(2){
+                width: 100%;
+                // justify-self:단일 그리드 아이템(Item)을 수평(행 축) 정렬합니다. 그리드 아이템의 가로 너비가 자신이 속한 그리드 열(Track)의 크기보다 작아야 합니다.
+                justify-self: center;
+            }
+            &:last-child{
+                justify-self: end;
+            }
+            ul{
+                display: flex;
+                color: white;
+                font-weight: 600;
+                // text-transform: 대문자 또는 소문자로 바꾸는 속성
+                // none : 입력된 그대로 출력합니다.
+                // capitalize : 단어의 첫번째 글자를 대문자로 바꿉니다.
+                // uppercase : 모든 글자를 대문자로 바꿉니다.
+                // lowercase : 모든 글자를 소문자로 바꿉니다.
+                // initial : 기본값으로 설정합니다.
+                // inherit : 부모 요소의 속성값을 상속받습니다.
+                text-transform: uppercase;
+                // li가 만약 마지막요소가 아닐경우.
+                a{
+                    color: white;
+                }
+                li:not(:last-child){
+                    margin-right: 15px;
+                }
+            }
+            form{
+                width: 100%;
+                input {
+                    padding: 7px 10px;
+                    width: 100%;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    color: $black;
+                    font-weight: 600;
+                    // placeholder 속성 사용
+                    // ::은 hover.. 그런 속성
+                    &::placeholder{
+                        font-weight: 300;
+                        color: rgba(0, 0, 0, 0.7);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,22 +1,25 @@
 header.header
-    .header__column
-    a(href=routes.home)
-        i.fab.fa-youtube
-    .header_column
-        form(action=routes.search, method="get")
-            input(type="text", placeholder="Search by term...", name="term")
+    .header__wrapper
+        .header__column
+            // 여기가 문제였슴 ㅎㅎ
+            // 안에 담아줘야하는데 같은 줄이니까 이렇게 됐당
+            a(href=routes.home)
+                i.fab.fa-youtube
+        .header__column
+            form(action=routes.search, method="get")
+                input(type="text", placeholder="Search by term...", name="term")
 
-    .header__column
-        ul
-            if !user.isAuthenticated
-                li
-                    a(href=routes.join) Join
-                li
-                    a(href=routes.login) Log In
-            else
-                li
-                    a(href=`/videos${routes.upload}`) Upload
-                li
-                    a(href=routes.userDetail(user.id)) Profile              
-                li
-                    a(href=routes.logout) Log Out              
+        .header__column
+            ul
+                if !user.isAuthenticated
+                    li
+                        a(href=routes.join) Join
+                    li
+                        a(href=routes.login) Log In
+                else
+                    li
+                        a(href=`/videos${routes.upload}`) Upload
+                    li
+                        a(href=routes.userDetail(user.id)) Profile              
+                    li
+                        a(href=routes.logout) Log Out              
