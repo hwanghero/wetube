@@ -61,6 +61,7 @@
                     font-size: 14px;
                     color: $black;
                     font-weight: 600;
+                    max-width: none;
                     // placeholder 속성 사용
                     // ::은 hover.. 그런 속성
                     &::placeholder{

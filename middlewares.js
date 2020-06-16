@@ -7,10 +7,11 @@ export const localsMiddleware = (req, res, next) => {
     res.locals.siteName = 'WeTube';
     res.locals.routes = routes;
     res.locals.user = {
-        isAuthenticated: false,
+        isAuthenticated: true,
         id: 1
     };
     next();
 };
 
-export const uploadVideo = multerVideo.single('file'); 
+// 요놈요거 input type file 인거 name으로 가져오는놈입니다
+export const uploadVideo = multerVideo.single('videoFile'); 
