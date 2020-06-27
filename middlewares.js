@@ -10,5 +10,21 @@ export const localsMiddleware = (req, res, next) => {
     next();
 };
 
+export const onlyPublic = (req, res, next) => {
+    if (req.user) {
+        res.redirect(routes.home);
+    } else {
+        next();
+    }
+};
+
+export const onlyUser = (req, res, next) => {
+    if (req.user) {
+        next();
+    } else {
+        res.redirect(routes.home);
+    }
+}
+
 // 요놈요거 input type file 인거 name으로 가져오는놈입니다
 export const uploadVideo = multerVideo.single('videoFile'); 
